@@ -4,11 +4,22 @@ import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
     {
-        //rutas del layout
+        path: 'login',
+        loadComponent: () => import('./features/auth/login.component').then(m => m.LoginComponent)
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./features/auth/register.component').then(m => m.RegisterComponent)
+    },
+    {
+        //rutas del layout (protegidas)
         path: '',
         component: LayoutComponent,
         //etiqueta children para agregar rutas hijas
         children: [
+            {
+                path: '', redirectTo: 'dashboard', pathMatch: 'full'
+            },
             {
                 path: 'dashboard', loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
             },
@@ -21,12 +32,7 @@ export const routes: Routes = [
         ]
     },
     {
-        //ruta de registro
-        path: 'register',
-        loadComponent: () => import('./features/auth/register.component').then(m => m.RegisterComponent)
-    },
-    {
         //ruta por defecto
-        path: '**', redirectTo: 'register'
+        path: '**', redirectTo: 'login'
     }
 ];

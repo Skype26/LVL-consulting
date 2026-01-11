@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angula
 @Component({
     standalone: true,
     imports: [ReactiveFormsModule],
+    selector: 'app-register',
     template: `
     <form [formGroup]="form">
         <h2>crear cuenta</h2>
