@@ -25,6 +25,7 @@ export class PageFormComponent implements OnInit {
     loading = signal(true);                 // Estado de carga
     selectedFile = signal<File | null>(null);  // Archivo seleccionado
     previewUrl = signal<string | null>(null);  // URL de vista previa del archivo
+    showContactFormModal = signal(false);    // Controla la visibilidad del modal
 
     // Formulario reactivo con validaciones
     form = new FormGroup({
