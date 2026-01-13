@@ -1,0 +1,49 @@
+{
+    "companies": [
+        {
+            "id": 1,
+            "name": "LVL Consulting",
+            "type": "Consultoría"
+        },
+        {
+            "id": 2,
+            "name": "Tech Solutions",
+            "type": "Tecnología"
+        },
+        {
+            "id": 3,
+            "name": "Marketing Pro",
+            "type": "Marketing"
+        }
+    ],
+    "companyTypes": [
+        {
+            "id": 1,
+            "name": "Consultoría"
+        },
+        {
+            "id": 2,
+            "name": "Tecnología"
+        },
+        {
+            "id": 3,
+            "name": "Marketing"
+        },
+        {
+            "id": 4,
+            "name": "Finanzas"
+        },
+        {
+            "id": 5,
+            "name": "Educación"
+        }
+    ],
+    "categories": [
+        "Administrador",
+        "Recursos humanos",
+        "Estudios contables",
+        "Logística",
+        "Ventas",
+        "Marketing"
+    ]
+}

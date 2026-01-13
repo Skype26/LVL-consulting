@@ -1,38 +1,46 @@
 import { Routes } from '@angular/router';
-//importar componente de layout
+// Importar componente de layout
 import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
     {
-        path: 'login',
-        loadComponent: () => import('./features/auth/login.component').then(m => m.LoginComponent)
+        // Ruta raíz redirige a register
+        path: '',
+        redirectTo: 'register',
+        pathMatch: 'full'
     },
     {
         path: 'register',
         loadComponent: () => import('./features/auth/register.component').then(m => m.RegisterComponent)
     },
     {
-        //rutas del layout (protegidas)
+        // Rutas del layout (protegidas)
         path: '',
         component: LayoutComponent,
-        //etiqueta children para agregar rutas hijas
+        // Etiqueta children para agregar rutas hijas
         children: [
             {
-                path: '', redirectTo: 'dashboard', pathMatch: 'full'
+                path: 'dashboard',
+                loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
             },
             {
-                path: 'dashboard', loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
+                path: 'pages',
+                loadComponent: () => import('./features/pages/pages-list.component').then(m => m.PagesListComponent)
             },
             {
-                path: 'pages', loadComponent: () => import('./features/pages/pages-list.component').then(m => m.PagesListComponent)
-            },
-            {
-                path: 'pages/new', loadComponent: () => import('./features/pages/page-form.component').then(m => m.PageFormComponent)
+                path: 'pages/new',
+                loadComponent: () => import('./features/pages/page-form.component').then(m => m.PageFormComponent)
             },
         ]
     },
     {
-        //ruta por defecto
-        path: '**', redirectTo: 'login'
+        // Ruta para página no encontrada (404)
+        path: '404',
+        loadComponent: () => import('./features/error/not-found.component').then(m => m.NotFoundComponent)
+    },
+    {
+        // Ruta por defecto (cualquier ruta no encontrada redirige a 404)
+        path: '**',
+        redirectTo: '404'
     }
 ];

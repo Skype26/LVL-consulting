@@ -1,0 +1,102 @@
+{
+    "stats": [
+        {
+            "title": "Ingresos",
+            "value": "S/ 460.00",
+            "change": "+5/50k",
+            "changeText": "Desde el mes pasado",
+            "trend": "up",
+            "icon": "trending-up"
+        },
+        {
+            "title": "Número de clientes",
+            "value": "4789",
+            "change": "-30 clientes",
+            "changeText": "Desde el mes pasado",
+            "trend": "down",
+            "icon": "users"
+        },
+        {
+            "title": "Inversión realizada",
+            "value": "S/ 5460.00k",
+            "change": "+5/32k",
+            "changeText": "Desde el mes pasado",
+            "trend": "up",
+            "icon": "dollar"
+        },
+        {
+            "title": "Relación de ganancia",
+            "value": "S/ 460.00",
+            "change": "-5/50k",
+            "changeText": "Desde el mes pasado",
+            "trend": "down",
+            "icon": "chart"
+        }
+    ],
+    "salesHistory": {
+        "weekly": [
+            {
+                "day": "Lunes",
+                "value": 65
+            },
+            {
+                "day": "Martes",
+                "value": 85
+            },
+            {
+                "day": "Miércoles",
+                "value": 75
+            },
+            {
+                "day": "Jueves",
+                "value": 95
+            },
+            {
+                "day": "Viernes",
+                "value": 45
+            },
+            {
+                "day": "Sábado",
+                "value": 70
+            },
+            {
+                "day": "Domingo",
+                "value": 90
+            }
+        ],
+        "periods": [
+            {
+                "name": "Anual",
+                "percentage": 100,
+                "amount": "S/4500"
+            },
+            {
+                "name": "Mensual",
+                "percentage": 60,
+                "amount": "S/4500"
+            },
+            {
+                "name": "Semanal",
+                "percentage": 20,
+                "amount": "S/4500"
+            },
+            {
+                "name": "Diario",
+                "percentage": 30,
+                "amount": "S/4500"
+            }
+        ]
+    },
+    "referrals": [
+        {
+            "name": "Referidos",
+            "count": 1024,
+            "percentage": 87
+        },
+        {
+            "name": "Referidos",
+            "count": 1024,
+            "percentage": 87
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+<div class="p-6">
+    <!-- Header -->
+    <div class="mb-6 flex items-center justify-between">
+        <div>
+            <h1 class="text-2xl font-bold text-indigo-900 mb-2">Nuevo formulario</h1>
+            <p class="text-sm text-gray-600">Complete sus datos y continúe con los siguientes pasos.</p>
+        </div>
+        <button (click)="onSubmit()" [disabled]="form.invalid"
+            class="flex items-center gap-2 px-6 py-3 bg-indigo-900 text-white rounded-lg hover:bg-indigo-800 transition disabled:opacity-50 disabled:cursor-not-allowed">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" />
+            </svg>
+            Guardar
+        </button>
+    </div>
+
+    <!-- Loading State -->
+    <div *ngIf="loading()" class="flex items-center justify-center h-64">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-900"></div>
+    </div>
+
+    <!-- Form -->
+    <div *ngIf="!loading()" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left Column - Form Fields -->
+        <div class="lg:col-span-2 bg-white rounded-lg shadow p-6">
+            <form [formGroup]="form" class="space-y-6">
+                <!-- Category Names Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Nombre de categoría<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" formControlName="categoryName1" placeholder="Introducir la categoría"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                        <div *ngIf="form.get('categoryName1')?.invalid && form.get('categoryName1')?.touched"
+                            class="text-red-500 text-xs mt-1">
+                            Este campo es requerido
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Nombre de categoría<span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" formControlName="categoryName2" placeholder="Introducir la categoría"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" />
+                    </div>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Empresa<span class="text-red-500">*</span>
+                    </label>
+                    <select formControlName="company"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition appearance-none bg-white">
+                        <option value="">Seleccionar una empresa</option>
+                        <option *ngFor="let company of companies()" [value]="company.id">
+                            {{ company.name }}
+                        </option>
+                    </select>
+                </div>
+
+                <!-- Company Types Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Tipo de empresa
+                        </label>
+                        <select formControlName="companyType1"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition appearance-none bg-white">
+                            <option value="">Seleccionar tipo de empresa</option>
+                            <option *ngFor="let type of companyTypes()" [value]="type.id">
+                                {{ type.name }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">
+                            Tipo de empresa
+                        </label>
+                        <select formControlName="companyType2"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition appearance-none bg-white">
+                            <option value="">Seleccionar tipo de empresa</option>
+                            <option *ngFor="let type of companyTypes()" [value]="type.id">
+                                {{ type.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Descripción
+                    </label>
+                    <textarea formControlName="description" rows="6"
+                        placeholder="Escribe una descripción para la categoría"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition resize-none"></textarea>
+                    <div *ngIf="form.get('description')?.invalid && form.get('description')?.touched"
+                        class="text-red-500 text-xs mt-1">
+                        La descripción debe tener al menos 10 caracteres
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Column - File Upload -->
+        <div class="rounded-lg shadow p-6 flex flex-col border border-gray-200 bg-gray-100">
+            <h3 class=" text-lg font-semibold text-gray-900 mb-4">Documentos</h3>
+            <div class="mt-25 flex-col p-6 text-center justify-center">
+                <input type="file" id="fileInput" (change)="onFileSelected($event)" accept="image/*,.pdf"
+                    class="hidden" />
+
+                <div *ngIf="!previewUrl()">
+                    <svg class="w-16 h-16 mx-auto text-indigo-900 mb-4" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <label for="fileInput"
+                        class="cursor-pointer inline-block px-6 py-3 bg-indigo-900 text-white rounded-lg hover:bg-indigo-800 transition">
+                        Seleccionar archivos
+                    </label>
+                    <p class="text-xs text-gray-500 mt-3">o arrastre y suelte los PDF aquí</p>
+                </div>
+
+                <div *ngIf="previewUrl()" class="space-y-4">
+                    <img [src]="previewUrl()" alt="Preview" class="max-w-full h-48 mx-auto object-cover rounded">
+                    <div class="flex gap-2 justify-center">
+                        <label for="fileInput"
+                            class="cursor-pointer px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition text-sm">
+                            Cambiar archivo
+                        </label>
+                        <button (click)="previewUrl.set(null); selectedFile.set(null)"
+                            class="px-4 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition text-sm">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

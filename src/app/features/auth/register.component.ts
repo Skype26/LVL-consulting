@@ -1,29 +1,42 @@
-import { Component } from "@angular/core";
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-//diseñamos la vista del registro
+import { Component, inject } from "@angular/core";
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from "@angular/forms";
+import { Router, RouterLink } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { AuthService } from "../../core/services/register.service";
+
 @Component({
     standalone: true,
-    imports: [ReactiveFormsModule],
-    selector: 'app-register',
-    template: `
-    <form [formGroup]="form">
-        <h2>crear cuenta</h2>
-
-        <input formControlName="email" type="email" placeholder="correo electronico" >
-        <input formControlName="username" type="text" placeholder="usuario" >
-        <input formControlName="password" type="password" placeholder=" escribe tu contraseña" >
-
-        <button (click)="submit()"> registrar </button>
-    </form>
-    `
+    selector: 'app-login',
+    templateUrl: './register.component.html',
+    imports: [ReactiveFormsModule, RouterLink, CommonModule]
 })
 export class RegisterComponent {
+    auth = inject(AuthService);
+    router = inject(Router);
+    showPassword = false;
+
     form = new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
-        username: new FormControl('', [Validators.required]),
-        passwoord: new FormControl('', [Validators.required, Validators.minLength(8)]),
+        name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+        password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+        terms: new FormControl(false, [Validators.requiredTrue])
     })
-    submit() {
-        console.log(this.form.value)
+
+    togglePassword() {
+        this.showPassword = !this.showPassword;
+    }
+
+    login() {
+        if (this.form.invalid) return;
+
+        this.auth.login({
+            id: 1,
+            name: this.form.value.name!,
+            email: this.form.value.email!,
+            password: this.form.value.password!
+        });
+
+        // Navegar al dashboard después del login
+        this.router.navigate(['/dashboard']);
     }
 }

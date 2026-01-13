@@ -1,0 +1,79 @@
+{
+    "pages": [
+        {
+            "id": 1,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Imágenes",
+            "imageUrl": "https://picsum.photos/seed/page1/100/100"
+        },
+        {
+            "id": 2,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Imágenes",
+            "imageUrl": "https://picsum.photos/seed/page2/100/100"
+        },
+        {
+            "id": 3,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Documento",
+            "imageUrl": "https://picsum.photos/seed/page3/100/100"
+        },
+        {
+            "id": 4,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Documento",
+            "imageUrl": "https://picsum.photos/seed/page4/100/100"
+        },
+        {
+            "id": 5,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Videos",
+            "imageUrl": "https://picsum.photos/seed/page5/100/100"
+        },
+        {
+            "id": 6,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Videos",
+            "imageUrl": "https://picsum.photos/seed/page6/100/100"
+        },
+        {
+            "id": 7,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Videos",
+            "imageUrl": "https://picsum.photos/seed/page7/100/100"
+        },
+        {
+            "id": 8,
+            "category": "Recursos gráficos",
+            "subcategory": "Recursos gráficos",
+            "description": "Recursos gráficos que se usarán en páginas que se deberán usar en su momento. Recursos gráficos que se usarán en páginas web",
+            "date": "15/04/24 - 6:30 hrs.",
+            "categoryType": "Videos",
+            "imageUrl": "https://picsum.photos/seed/page8/100/100"
+        }
+    ],
+    "totalPages": 2,
+    "currentPage": 1,
+    "itemsPerPage": 10
+}

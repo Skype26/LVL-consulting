@@ -1,29 +1,43 @@
-import { Component, inject } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
-import { AuthService } from "../core/services/auth.service";
+import { Component, inject, signal } from "@angular/core";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { AuthService } from "../core/services/register.service";
+import { SidebarService } from "../core/services/sidebar.service";
+
+/**
+ * Componente de barra lateral (sidebar)
+ * Muestra el menú de navegación principal y se puede contraer/expandir
+ */
 
 @Component({
     selector: 'app-sidebar',
     standalone: true,
-    imports: [RouterLink],
-    template: `
-    <div class="sidebar">
-        <h2>Menú</h2>
-        <nav>
-            <a routerLink="/dashboard">Dashboard</a>
-            <a routerLink="/pages">Páginas</a>
-            <a routerLink="/pages/new">Nueva Página</a>
-        </nav>
-        <button (click)="logout()">Cerrar sesión</button>
-    </div>
-    `
+    imports: [RouterLink, RouterLinkActive, CommonModule],
+    templateUrl: './sidebar.component.html'
 })
 export class SidebarComponent {
     auth = inject(AuthService);
     router = inject(Router);
+    sidebarService = inject(SidebarService);
 
-    logout() {
-        this.auth.logout();
-        this.router.navigate(['/login']);
+    pagesOpen = signal(false);
+
+    // Usar el estado del servicio
+    get isCollapsed() {
+        return this.sidebarService.isCollapsed();
+    }
+
+    /**
+     * Alterna el estado del sidebar (expandido/contraído)
+     */
+    toggleSidebar() {
+        this.sidebarService.toggleSidebar();
+    }
+
+    /**
+     * Alterna la visibilidad del submenú de páginas
+     */
+    togglePages() {
+        this.pagesOpen.update(v => !v);
     }
 }

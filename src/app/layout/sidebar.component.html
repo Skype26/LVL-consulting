@@ -1,0 +1,213 @@
+<aside
+    class="ml-auto fixed left-0 top-0 h-screen bg-gradient-to-b from-slate-50 to-white border-r border-gray-200 transition-all duration-300 z-50 shadow-lg"
+    [class.w-64]="!isCollapsed" [class.w-20]="isCollapsed">
+    <!-- Logo Section with Toggle -->
+    <div class="p-6 border-b border-gray-200 flex items-center justify-between">
+        <!-- Expanded State: Logo + Toggle Button -->
+        <div class="flex items-center gap-3 w-full" *ngIf="!isCollapsed">
+            <div class="flex items-center gap-2 flex-1">
+                <div>
+                </div>
+                <svg width="114" height="20" viewBox="0 0 114 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_2_725)">
+                        <path
+                            d="M1.58115 4.61539H0.0125732V0H6.3631V15.4093H11.1069V13.8709H15.8508V20.0494H4.78183C3.93969 20.0494 3.13204 19.7239 2.53656 19.1446C1.94109 18.5652 1.60656 17.7795 1.60656 16.9602L1.58115 4.61539Z"
+                            fill="#092083" />
+                        <path
+                            d="M25.3005 15.4093H26.8818V20.0247H20.5313V4.6401H15.7874V6.14148H11.0436V-0.0370789H22.0744C22.4941 -0.0370993 22.9096 0.0438112 23.297 0.20099C23.6843 0.358169 24.0357 0.588491 24.331 0.878637C24.6263 1.16878 24.8595 1.513 25.0172 1.89138C25.1749 2.26976 25.2539 2.6748 25.2497 3.08309L25.3005 15.4093Z"
+                            fill="#092083" />
+                        <path d="M15.8128 7.69232H11.069V12.3077H15.8128V7.69232Z" fill="#3FF8BB" />
+                        <path
+                            d="M38.3572 7.04356H41.1959V8.66852H36.8077C36.6392 8.66852 36.4777 8.60343 36.3586 8.48756C36.2395 8.37169 36.1726 8.21453 36.1726 8.05066V0H38.3445L38.3572 7.04356Z"
+                            fill="#092083" />
+                        <path
+                            d="M49.3055 0L46.1302 8.64998H43.4122L40.2369 0H42.5612L44.7649 6.54928L46.9876 0H49.3055Z"
+                            fill="#092083" />
+                        <path
+                            d="M52.4998 7.04356H55.3449V8.66852H50.9503C50.7819 8.66852 50.6204 8.60343 50.5013 8.48756C50.3822 8.37169 50.3152 8.21453 50.3152 8.05066V0H52.4808L52.4998 7.04356Z"
+                            fill="#092083" />
+                        <path
+                            d="M34.9787 13.4136C35.3367 12.7707 35.8767 12.2411 36.5346 11.8875C37.2257 11.5147 38.0053 11.325 38.7954 11.3377C39.7441 11.3134 40.6746 11.5935 41.4436 12.1347C42.1803 12.6677 42.7016 13.4351 42.9169 14.3034H40.5926C40.4352 13.9683 40.1787 13.6866 39.8559 13.494C39.5269 13.3063 39.1513 13.2102 38.77 13.2159C38.4711 13.2059 38.1736 13.2605 37.899 13.3759C37.6245 13.4913 37.3797 13.6646 37.1824 13.8832C36.7911 14.3949 36.5798 15.0156 36.5798 15.6534C36.5798 16.2911 36.7911 16.9119 37.1824 17.4235C37.38 17.6414 37.625 17.8138 37.8996 17.9281C38.1742 18.0425 38.4715 18.0959 38.77 18.0846C39.1513 18.0904 39.5269 17.9943 39.8559 17.8066C40.1777 17.6157 40.4341 17.3361 40.5926 17.0034H42.9169C42.7033 17.8707 42.1814 18.6367 41.4436 19.1659C40.6728 19.7028 39.7431 19.9805 38.7954 19.9567C38.0053 19.9694 37.2257 19.7797 36.5346 19.4069C35.8782 19.0514 35.3387 18.5223 34.9787 17.8808C34.5959 17.1973 34.4033 16.4285 34.4199 15.6503C34.4048 14.8703 34.5973 14.0998 34.9787 13.4136Z"
+                            fill="#092083" />
+                        <path
+                            d="M46.5112 19.4501C45.8379 19.0843 45.2784 18.5485 44.8919 17.8993C44.4962 17.2178 44.2883 16.4484 44.2883 15.6657C44.2883 14.8831 44.4962 14.1137 44.8919 13.4322C45.2807 12.7878 45.8399 12.2566 46.5112 11.8937C47.2012 11.5287 47.974 11.3375 48.7593 11.3375C49.5447 11.3375 50.3175 11.5287 51.0074 11.8937C51.6797 12.2533 52.2376 12.7854 52.6204 13.4322C53.0097 14.1157 53.2139 14.8843 53.2139 15.6657C53.2139 16.4472 53.0097 17.2158 52.6204 17.8993C52.2379 18.5495 51.6802 19.0857 51.0074 19.4501C50.3231 19.8226 49.5497 20.0123 48.7657 20C47.9779 20.0098 47.2011 19.8203 46.5112 19.4501ZM50.4295 17.4483C50.8333 16.9359 51.0521 16.3083 51.0521 15.6627C51.0521 15.017 50.8333 14.3894 50.4295 13.877C50.2188 13.6527 49.96 13.4761 49.6714 13.3597C49.3828 13.2433 49.0714 13.19 48.7593 13.2036C48.4469 13.1904 48.1353 13.2433 47.8459 13.3585C47.5565 13.4737 47.2962 13.6485 47.0828 13.8709C46.6749 14.3839 46.4537 15.0141 46.4537 15.6627C46.4537 16.3112 46.6749 16.9414 47.0828 17.4544C47.2962 17.6768 47.5565 17.8516 47.8459 17.9668C48.1353 18.082 48.4469 18.1349 48.7593 18.1217C49.0714 18.1353 49.3828 18.082 49.6714 17.9656C49.96 17.8492 50.2188 17.6726 50.4295 17.4483Z"
+                            fill="#092083" />
+                        <path
+                            d="M62.3559 19.7961H60.2411L56.6976 14.5814V19.7961H54.5765V11.3376H56.6976L60.2411 16.5771V11.3376H62.3559V19.7961Z"
+                            fill="#092083" />
+                        <path
+                            d="M65.4231 19.7343C64.9446 19.5481 64.5275 19.2383 64.2165 18.8384C63.9108 18.4239 63.7444 17.9275 63.7402 17.4174H65.9947C65.9969 17.5507 66.0271 17.6823 66.0833 17.8039C66.1395 17.9256 66.2206 18.0348 66.3216 18.125C66.4226 18.2152 66.5414 18.2844 66.6708 18.3285C66.8002 18.3725 66.9375 18.3905 67.0743 18.3812C67.3393 18.3958 67.6015 18.3217 67.8173 18.1711C67.8975 18.104 67.963 18.0217 68.0096 17.9292C68.0561 17.8367 68.0829 17.736 68.0883 17.6332C68.0936 17.5303 68.0774 17.4275 68.0406 17.3309C68.0039 17.2343 67.9473 17.146 67.8744 17.0714C67.7209 16.9256 67.5397 16.8102 67.341 16.7315C67.0466 16.6138 66.7455 16.5127 66.4392 16.4288C65.9687 16.296 65.51 16.1266 65.0675 15.9221C64.704 15.7501 64.3898 15.4933 64.153 15.1745C63.8797 14.8004 63.7433 14.3479 63.7656 13.8894C63.7488 13.5342 63.8202 13.1802 63.9739 12.8575C64.1275 12.5349 64.3589 12.253 64.6484 12.0358C65.3103 11.567 66.1167 11.3316 66.9345 11.3685C67.7626 11.329 68.5799 11.5643 69.2525 12.0358C69.5427 12.2558 69.778 12.5368 69.9408 12.8578C70.1036 13.1788 70.1896 13.5315 70.1924 13.8894H67.9062C67.9033 13.7662 67.8742 13.6449 67.8206 13.5332C67.767 13.4215 67.6902 13.3219 67.595 13.2406C67.3886 13.0793 67.1292 12.9959 66.8647 13.0059C66.6351 12.9929 66.4088 13.0633 66.2296 13.2036C66.1503 13.2773 66.0882 13.3667 66.0476 13.4659C66.0071 13.5651 65.989 13.6716 65.9947 13.7782C65.9969 13.9069 66.0354 14.0326 66.106 14.1415C66.1765 14.2504 66.2764 14.3385 66.3948 14.396C66.7972 14.6078 67.2234 14.7736 67.6649 14.8903C68.1308 15.0398 68.5868 15.2173 69.0302 15.4217C69.3869 15.5984 69.6991 15.8495 69.9447 16.1569C70.2101 16.5158 70.3443 16.9509 70.3257 17.3926C70.3304 17.8568 70.2005 18.3129 69.9511 18.7087C69.6794 19.1131 69.2996 19.4378 68.8524 19.6478C68.3227 19.8904 67.742 20.009 67.1568 19.9938C66.5671 20.0167 65.9785 19.9286 65.4231 19.7343Z"
+                            fill="#092083" />
+                        <path
+                            d="M73.7804 11.3376V16.3979C73.7537 16.8207 73.892 17.2378 74.1678 17.5656C74.3128 17.7103 74.4885 17.8223 74.6827 17.8938C74.8769 17.9653 75.0848 17.9946 75.2919 17.9796C75.5016 17.9932 75.712 17.9633 75.9091 17.892C76.1061 17.8206 76.2853 17.7094 76.4349 17.5656C76.7159 17.2402 76.8569 16.8219 76.8287 16.3979V11.3376H78.9497V16.3855C78.973 17.0566 78.8013 17.7204 78.4544 18.3009C78.1373 18.8136 77.6741 19.2257 77.1208 19.4872C76.537 19.7542 75.8988 19.8893 75.2538 19.8826C74.6193 19.8927 73.991 19.7594 73.4184 19.4933C72.8828 19.2302 72.4404 18.817 72.1483 18.3071C71.8195 17.7184 71.6573 17.0552 71.6784 16.3855V11.3376H73.7804Z"
+                            fill="#092083" />
+                        <path
+                            d="M82.4362 18.2082H85.2114V19.7961H80.9375C80.7691 19.7961 80.6075 19.731 80.4884 19.6151C80.3693 19.4993 80.3024 19.3421 80.3024 19.1782V11.3376H82.4172L82.4362 18.2082Z"
+                            fill="#092083" />
+                        <path d="M91.0094 11.3376V12.9873H88.7042V19.7837H86.5894V12.9873H84.2842V11.3376H91.0094Z"
+                            fill="#092083" />
+                        <path d="M94.4959 11.3376V19.7961H92.3812V11.3376H94.4959Z" fill="#092083" />
+                        <path
+                            d="M103.647 19.7961H101.532L97.9886 14.5814V19.7961H95.8676V11.3376H97.9886L101.532 16.5771V11.3376H103.647V19.7961Z"
+                            fill="#092083" />
+                        <path
+                            d="M111.147 14.1118C110.993 13.844 110.758 13.6284 110.474 13.494C110.153 13.339 109.797 13.2626 109.439 13.2715C109.132 13.2597 108.827 13.312 108.543 13.425C108.259 13.538 108.004 13.709 107.794 13.9265C107.381 14.4372 107.156 15.0683 107.156 15.7182C107.156 16.3682 107.381 16.9992 107.794 17.51C108.029 17.7347 108.31 17.909 108.618 18.0218C108.927 18.1345 109.256 18.1833 109.585 18.1649C110.054 18.1793 110.515 18.0448 110.899 17.7819C111.275 17.501 111.551 17.1118 111.687 16.6697H109V15.1498H113.611V17.0713C113.44 17.6178 113.153 18.1231 112.767 18.5543C112.382 18.9854 111.908 19.3328 111.376 19.5737C110.766 19.8581 110.096 19.9999 109.42 19.9876C108.617 20.0001 107.826 19.8107 107.121 19.4377C106.461 19.0828 105.917 18.5538 105.552 17.9116C105.164 17.2299 104.969 16.4602 104.987 15.6812C104.971 14.9003 105.166 14.1291 105.552 13.4445C105.914 12.8026 106.456 12.2735 107.114 11.9184C107.817 11.5454 108.607 11.356 109.407 11.3685C110.343 11.3399 111.264 11.597 112.042 12.1038C112.756 12.5912 113.26 13.317 113.459 14.1427L111.147 14.1118Z"
+                            fill="#092083" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_2_725">
+                            <rect width="113.636" height="20" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
+            </div>
+            <button (click)="toggleSidebar()"
+                class="p-2 hover:bg-gray-100 rounded-lg transition text-gray-600 hover:text-gray-900"
+                title="Colapsar menú">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0.666667 8C0.477778 8 0.319444 7.93611 0.191667 7.80833C0.0638889 7.68056 0 7.52222 0 7.33333C0 7.14444 0.0638889 6.98611 0.191667 6.85833C0.319444 6.73056 0.477778 6.66667 0.666667 6.66667H11.3333C11.5222 6.66667 11.6806 6.73056 11.8083 6.85833C11.9361 6.98611 12 7.14444 12 7.33333C12 7.52222 11.9361 7.68056 11.8083 7.80833C11.6806 7.93611 11.5222 8 11.3333 8H0.666667ZM0.666667 4.66667C0.477778 4.66667 0.319444 4.60278 0.191667 4.475C0.0638889 4.34722 0 4.18889 0 4C0 3.81111 0.0638889 3.65278 0.191667 3.525C0.319444 3.39722 0.477778 3.33333 0.666667 3.33333H11.3333C11.5222 3.33333 11.6806 3.39722 11.8083 3.525C11.9361 3.65278 12 3.81111 12 4C12 4.18889 11.9361 4.34722 11.8083 4.475C11.6806 4.60278 11.5222 4.66667 11.3333 4.66667H0.666667ZM0.666667 1.33333C0.477778 1.33333 0.319444 1.26944 0.191667 1.14167C0.0638889 1.01389 0 0.855556 0 0.666667C0 0.477778 0.0638889 0.319444 0.191667 0.191667C0.319444 0.0638889 0.477778 0 0.666667 0H11.3333C11.5222 0 11.6806 0.0638889 11.8083 0.191667C11.9361 0.319444 12 0.477778 12 0.666667C12 0.855556 11.9361 1.01389 11.8083 1.14167C11.6806 1.26944 11.5222 1.33333 11.3333 1.33333H0.666667Z"
+                        fill="#545A6D" />
+                </svg>
+
+            </button>
+        </div>
+
+        <!-- Collapsed State: Only Toggle Button -->
+        <button *ngIf="isCollapsed" (click)="toggleSidebar()"
+            class="w-full p-2 hover:bg-gray-100 rounded-lg transition text-gray-600 hover:text-gray-900 flex items-center justify-center"
+            title="Expandir menú">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Menu Label -->
+    <div class="px-6 py-4">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider" *ngIf="!isCollapsed">Menú</p>
+        <div class="w-8 h-0.5 bg-gray-300 mx-auto" *ngIf="isCollapsed"></div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="px-3 space-y-1">
+        <!-- Dashboard -->
+        <a routerLink="/dashboard" routerLinkActive="bg-indigo-50 text-indigo-900"
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Dashboard">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Dashboard</span>
+        </a>
+
+        <!-- Productos -->
+        <a routerLink="/productos" routerLinkActive="bg-indigo-50 text-indigo-900 "
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Productos">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Productos</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+
+        <!-- Apps -->
+        <a routerLink="/apps" routerLinkActive="bg-indigo-50 text-indigo-900"
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Apps">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Apps</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+
+        <!-- Paginas web menu desplegable -->
+        <div>
+            <button (click)="togglePages()" routerLink="/pages"
+                class="bg-indigo-50 text-indigo-900 w-full flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+                [class.justify-center]="isCollapsed" [class.bg-indigo-50]="pagesOpen()"
+                [class.text-indigo-900]="pagesOpen()" title="Páginas webs">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="font-medium" *ngIf="!isCollapsed">Páginas webs</span>
+                <svg class="w-4 h-4 ml-auto transition-transform" [class.rotate-90]="pagesOpen()" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <!-- submenu -->
+            <div *ngIf="pagesOpen() && !isCollapsed" class="ml-8 mt-1 space-y-1">
+                <button routerLink="/pages/new" routerLinkActive="bg-indigo-50 text-indigo-900"
+                    class="w-full flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition">
+                    Administrador
+                </button>
+                <a routerLink="/pages/recursos-humanos" routerLinkActive="bg-indigo-50 text-indigo-900"
+                    class="w-full flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition">
+                    Recursos humanos
+                </a>
+                <a routerLink="/pages/estudios-contables" routerLinkActive="bg-indigo-50 text-indigo-900"
+                    class="w-full flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition">
+                    Estudios Contables
+                </a>
+                <a routerLink="/pages/logistica" routerLinkActive="bg-indigo-50 text-indigo-900"
+                    class="w-full flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition">
+                    Logística
+                </a>
+            </div>
+        </div>
+
+        <!-- Servidores -->
+        <a routerLink="/servidores"
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Servidores">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Servidores</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+
+        <!-- Tienda -->
+        <a routerLink="/tienda" routerLinkActive="bg-indigo-50 text-indigo-900"
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Tienda">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Tienda</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+
+        <!-- Centro de ayuda -->
+        <a routerLink="/ayuda" routerLinkActive="bg-indigo-50 text-indigo-900 "
+            class="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-700 hover:bg-blue-100 transition group"
+            [class.justify-center]="isCollapsed" title="Centro de ayuda">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-medium" *ngIf="!isCollapsed">Centro de ayuda</span>
+            <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" *ngIf="!isCollapsed">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </a>
+    </nav>
+</aside>
